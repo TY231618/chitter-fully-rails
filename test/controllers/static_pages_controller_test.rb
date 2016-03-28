@@ -19,4 +19,9 @@ class StaticPagesControllerTest < ActionController::TestCase
     assert_select "title", "About | Chitter App"
   end
 
+  test "should get contact" do
+    get :contact
+    assert_response :success
+    assert_select "contact", "Contact | Chitter App"
+  end
 end
