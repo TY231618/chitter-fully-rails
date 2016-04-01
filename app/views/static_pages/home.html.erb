@@ -1,11 +1,24 @@
-<div class="center jumbotron">
+<% if logged_in? %>
+  <div class="row">
+    <aside class="col-md-4">
+      <section class="user_info">
+        <%= render 'shared/user_info' %>
+      </section>
+      <section class="micropost_form">
+        <%= render 'shared/micropost_form' %>
+      </section>
+    </aside>
+  </div>
+<% else %>
+  <div class="center jumbotron">
 
-  <h1>Welcome to Chitter</h1>
-  <p>
-    This is the work in progress homepage!
-  </p>
+    <h1>Welcome to Chitter</h1>
+    <p>
+      This is the work in progress homepage!
+    </p>
 
-  <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
-</div>
+    <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
+  </div>
 
-<img id="logo" type="image" src="images/chitter.png" />
+  <img id="logo" type="image" src="images/chitter.png" />
+<% end %>
